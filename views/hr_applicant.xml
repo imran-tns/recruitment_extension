@@ -10,8 +10,8 @@
                         <field name="emergency_contact_ids" nolabel="1">
                             <tree editable="bottom">
                                 <field name="name" required="1"/>
-                                <field name="address"/>
-                                <field name="phone"/>
+                                <field name="address" required="1"/>
+                                <field name="phone" required="1"/>
                             </tree>
                         </field>
                     </page>
@@ -19,8 +19,8 @@
                         <field name="education_info_ids" nolabel="1">
                             <tree editable="bottom">
                                 <field name="institute" required="1"/>
-                                <field name="degree_id"/>
-                                <field name="passing_year"/>
+                                <field name="degree_id" required="1"/>
+                                <field name="passing_year" required="1"/>
                             </tree>
                         </field>
                     </page>
