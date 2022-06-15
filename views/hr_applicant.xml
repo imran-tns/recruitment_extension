@@ -18,7 +18,7 @@
                     <page string="Education" name="education_info_tab">
                         <field name="education_info_ids" nolabel="1">
                             <tree editable="bottom">
-                                <field name="institute" required="1"/>
+                                <field name="institute_id" required="1"/>
                                 <field name="degree_id" required="1"/>
                                 <field name="passing_year" required="1"/>
                             </tree>
