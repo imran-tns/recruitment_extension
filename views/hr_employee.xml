@@ -7,12 +7,57 @@
             <field name="arch" type="xml">
                 <xpath expr="//form//notebook//page[@name='hr_settings']" position="after">
                     <page string="Emergency Contacts" name="emergency_contacts_tab">
-                        <field name="emergency_contact_ids" nolabel="1">
-                            <tree editable="bottom">
-                                <field name="name" required="1"/>
-                                <field name="address"/>
+                        <field name="emergency_contact_ids" mode="kanban">
+                            <kanban>
+                                <field name="name"/>
+                                <field name="street"/>
+                                <field name="street2"/>
                                 <field name="phone"/>
-                            </tree>
+                                <templates>
+                                    <t t-name="kanban-box">
+                                        <div t-attf-class="oe_kanban_global_click">
+                                            <div class="oe_kanban_details">
+                                                <ul>
+                                                    <li>
+                                                        Name:
+                                                        <field name="name"/>
+                                                    </li>
+                                                    <li>
+                                                        Phone:
+                                                        <field name="phone"/>
+                                                    </li>
+                                                    <li>
+                                                        Address:
+                                                        <field name="street"/>
+                                                        <field name="street2"/>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </t>
+                                </templates>
+                            </kanban>
+                            <fields/>
+                            <form string="Contact">
+                                <sheet>
+                                    <group>
+                                        <group>
+                                            <field name="name"/>
+                                            <field name="phone"/>
+                                            <label for="street" string="Address"/>
+                                            <div class="o_address_format">
+                                                <field name="street" placeholder="Street..." class="o_address_street"/>
+                                                <field name="street2" placeholder="Street 2..."
+                                                       class="o_address_street"/>
+                                                <field name="zip" placeholder="Zip" class="o_address_zip"/>
+                                                <field name="state_id" placeholder="State" class="o_address_state"/>
+                                                <field name="country_id" placeholder="Country"
+                                                       class="o_address_country"/>
+                                            </div>
+                                        </group>
+                                    </group>
+                                </sheet>
+                            </form>
                         </field>
                     </page>
                     <page string="Education" name="education_info_tab">
