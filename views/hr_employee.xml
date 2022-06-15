@@ -1,0 +1,41 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="recruitment_extension_employee_form_view">
+            <field name="name">Extended Employee Form View</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form//notebook//page[@name='hr_settings']" position="after">
+                    <page string="Emergency Contacts" name="emergency_contacts_tab">
+                        <field name="emergency_contact_ids" nolabel="1">
+                            <tree editable="bottom">
+                                <field name="name" required="1"/>
+                                <field name="address"/>
+                                <field name="phone"/>
+                            </tree>
+                        </field>
+                    </page>
+                    <page string="Education" name="education_info_tab">
+                        <field name="education_info_ids" nolabel="1">
+                            <tree editable="bottom">
+                                <field name="institute" required="1"/>
+                                <field name="degree_id"/>
+                                <field name="passing_year"/>
+                            </tree>
+                        </field>
+                    </page>
+                    <page string="Leave" name="leave_info_tab">
+                        <group>
+                            <field name="leave_type" required="1"/>
+                        </group>
+                        <field name="leave_day_ids" string="Days">
+                            <tree editable="bottom">
+                                <field name="day" required="1"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,37 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="recruitment_extension_applicant_form_view">
+            <field name="name">Extended Applicant Form View</field>
+            <field name="model">hr.applicant</field>
+            <field name="inherit_id" ref="hr_recruitment.hr_applicant_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form//notebook//page" position="after">
+                    <page string="Emergency Contacts" name="emergency_contacts_tab">
+                        <field name="emergency_contact_ids" nolabel="1">
+                            <tree editable="bottom">
+                                <field name="name" required="1"/>
+                                <field name="address"/>
+                                <field name="phone"/>
+                            </tree>
+                        </field>
+                    </page>
+                    <page string="Education" name="education_info_tab">
+                        <field name="education_info_ids" nolabel="1">
+                            <tree editable="bottom">
+                                <field name="institute" required="1"/>
+                                <field name="degree_id"/>
+                                <field name="passing_year"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+                <xpath expr="//form//header//button[@name='create_employee_from_applicant']" position="replace">
+                    <button string="Create Employee" name="create_employee_from_applicant" type="object" data-hotkey="v"
+                            class="oe_highlight o_create_employee"
+                            attrs="{'invisible': ['|',('emp_id', '!=', False),('active', '=', False)]}"
+                            groups="hr.group_hr_manager"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,10 @@
+<odoo>
+    <data>
+        <record model="ir.rule" id="recruitment_application_filter_for_department_managers">
+            <field name="name">Recruitment Application Filtering Rule</field>
+            <field name="model_id" ref="hr_recruitment.model_hr_applicant"/>
+            <field name="domain_force">[('department_id.manager_id.user_id', '=', user.id)]</field>
+            <field name="groups" eval="[(4, ref('hr_recruitment.group_hr_recruitment_manager'))]"/>
+        </record>
+    </data>
+</odoo>

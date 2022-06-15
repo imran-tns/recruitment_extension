@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+hr.access_hr_employee_user,hr.employee user,model_hr_employee,hr.group_hr_manager,1,1,1,1
+hr.access_hr_department_user,hr.department user,hr.model_hr_department,hr.group_hr_manager,1,1,1,1
+hr.access_hr_department_employee,hr.department.employee,hr.model_hr_department,hr.group_hr_manager,1,1,1,1
+hr.access_hr_job_user,hr.job user,hr.model_hr_job,hr.group_hr_manager,1,1,1,1
+emergency_contact_access_id,emergency_contact_access_name,recruitment_extension.model_recruitment_extension_emergency_contact,hr.group_hr_manager,1,1,1,1
+education_info_access_id,education_info_access_name,recruitment_extension.model_recruitment_extension_education_info,hr.group_hr_manager,1,1,1,1
+leave_days_access_id,leave_days_access_name,recruitment_extension.model_recruitment_extension_leave_days,hr.group_hr_manager,1,1,1,1
+
+
