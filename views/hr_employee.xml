@@ -25,12 +25,11 @@
                         </field>
                     </page>
                     <page string="Leave" name="leave_info_tab">
-                        <group>
-                            <field name="leave_type" required="1"/>
-                        </group>
-                        <field name="leave_day_ids" string="Days">
+                        <field name="leave_ids" nolabel="1">
                             <tree editable="bottom">
-                                <field name="day" required="1"/>
+                                <field name="leave_type_id" required="1"/>
+                                <field name="number_of_day" required="1" string="Days"/>
+                                <field name="leave_year" required="1"/>
                             </tree>
                         </field>
                     </page>

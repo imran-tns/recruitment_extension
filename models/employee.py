@@ -9,8 +9,7 @@ class HrEmployee(models.Model):
 
     emergency_contact_ids = fields.One2many('recruitment_extension.emergency_contact', 'employee_id')
     education_info_ids = fields.One2many('recruitment_extension.education_info', 'employee_id')
-    leave_type = fields.Many2one('hr.leave.type', "Leave Type")
-    leave_day_ids = fields.One2many('recruitment_extension.leave_days', 'employee_id')
+    leave_ids = fields.One2many('recruitment_extension.leave', 'employee_id')
 
     @api.model
     def create(self, vals):
